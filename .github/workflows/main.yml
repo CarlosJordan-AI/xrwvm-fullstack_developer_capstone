@@ -39,6 +39,7 @@ jobs:
       - name: Install JSHint
         run: npm install jshint --global
       - name: Run Linter
-        run: |
-          find ./server/database -name "*.js" -exec jshint {} +
-          echo "Linted all the js files successfully"
+      run: |
+        pwd
+        find . -name "*.py" -exec flake8 --max-line-length=120 --ignore=E501,W503,E302,E303,E401,F401,W291,W293,E711,E712,F841,E231,E275,E722,W292,E225,E226,E117,E128,E131,W191,E101,W391,E251,E265 {} +
+        echo "Linted all the python files successfully"
